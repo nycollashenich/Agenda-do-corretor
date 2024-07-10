@@ -1,11 +1,11 @@
 {% include "base.html" %}
 {% load static %}
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" >
-    <header >
+<body>
+    <header id='header'>
         <div></div>
         <div>
-            <h1>The realtor</h1>
-            <button><a href="{% url 'list' %}">Iniciar agenda</a></button>
+            <h1 class="title">The realtor</h1>
+            <a class="button" href="{% url 'list' %}">Iniciar</a>
         </div>
     </header>
 </body>
