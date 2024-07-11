@@ -46,19 +46,18 @@ class Imovel(models.Model):
     pets = models.BooleanField('Aceita Pets', default=False)
     condicoes = models.CharField('Condições', max_length=20, choices=CONDICAO_IMOVEL_CHOICES)
     descricao = models.TextField('Descrição', blank=True)
-    imagem = StdImageField('Imagem', upload_to=get_file_path, variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
+    imagem = StdImageField('Imagem', blank=True,upload_to=get_file_path, variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True, blank=True)
 
+    # slugy
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.rua)  # Gera o slug baseado no título
-            # Pode adicionar lógica aqui para garantir que o slug seja único, se necessário
+            self.slug = slugify(self.rua)
         super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Imóvel'
         verbose_name_plural = 'Imóveis'
-   
 
-        def __str__(self):
-            return f"{self.tipo} - {self.rua}, {self.numero} - {self.bairro}, {self.cidade} - {self.estado}"
+    def __str__(self):
+        return self.rua

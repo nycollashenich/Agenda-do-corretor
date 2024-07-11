@@ -1,4 +1,41 @@
-{% include "base.html" %}
+{% extends "base.html" %}
 {% load static %}
+{% block content %}
+<header class="header-nav">
+    <nav class="nav">
+        <a href="/" class="logo">The realtor</a>
+        <ul class="nav-list">
+            <li><a href="{% url 'add_imovel' %}">Adicionar</a></li>
+            <li><a href="">Deslogar</a></li>
+        </ul>
+    </nav>
+</header>       
 
-<p>Teste</p>
+        <table class="table-list">
+            <thead class='theadtable'>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Rua</th>
+                    <th>Estado</th>
+                    <th>Cidade</th>
+                    <th>Proprietário</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody class="tbodytable">
+                {% for i in imoveis %}
+                    <tr>
+                        <td>{{ i.tipo }}</td>
+                        <td>{{ i.rua }}</td>
+                        <td>{{ i.estado }}</td>
+                        <td>{{ i.cidade }}</td>
+                        <td>Ainda não tem</td>
+                        <td>
+                            <a class="btn btn-warning" href="{% url 'upd_imovel' slug=i.slug %}">Editar</a>
+                            <a class="btn btn-danger" href="{% url 'del_imovel' slug=i.slug %}">Deletar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock content %}

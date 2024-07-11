@@ -1,0 +1,11 @@
+{% load static %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn bnt-primary">Save</button>
+        <button type="button" class="btn bnt-warning">
+            <a href="{% url 'list' %}">Cancelar</a>
+        </button>
+    </form>
+{% endblock content %}

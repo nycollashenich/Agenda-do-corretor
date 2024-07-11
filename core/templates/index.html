@@ -1,10 +1,11 @@
-{% include "base.html" %}
+{% extends "base.html" %}
 {% load static %}
+{% block content %}
 <body>
-    <header id='header'>
-        <div></div>
+    <header id='header-index'>
         <div>
-            <h1 class="title">The realtor</h1>
-            <a class="button" href="{% url 'list' %}">Logar</a>
+            <h1 class="title-index">The realtor</h1>
+            <a class="button-index" href="{% url 'list' %}">Logar</a>
         </div>
     </header>
+{% endblock content %}

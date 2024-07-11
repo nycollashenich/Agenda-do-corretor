@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>Você deseja excluír esse imóvel?</p>
+        <br><br>
+            <button type="submit" class="btn bnt-danger">Confirmar</button>
+            <button type="button" class="btn bnt-warning">
+                <a href="{% url 'list' %}">Cancelar</a>
+            </button>
+    </form>
+{% endblock content %}
