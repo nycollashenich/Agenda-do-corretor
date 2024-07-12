@@ -6,7 +6,6 @@
         <a href="/" class="logo">The realtor</a>
         <ul class="nav-list">
             <li><a href="{% url 'add_imovel' %}">Adicionar</a></li>
-            <li><a href="">Deslogar</a></li>
         </ul>
     </nav>
 </header>       
@@ -18,7 +17,7 @@
                     <th>Rua</th>
                     <th>Estado</th>
                     <th>Cidade</th>
-                    <th>Proprietário</th>
+                    <th>Horário</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -29,7 +28,7 @@
                         <td>{{ i.rua }}</td>
                         <td>{{ i.estado }}</td>
                         <td>{{ i.cidade }}</td>
-                        <td>Ainda não tem</td>
+                        <td>{{ i.agenda }}</td>
                         <td>
                             <a class="btn btn-warning" href="{% url 'upd_imovel' slug=i.slug %}">Editar</a>
                             <a class="btn btn-danger" href="{% url 'del_imovel' slug=i.slug %}">Deletar</a>

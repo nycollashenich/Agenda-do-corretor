@@ -98,7 +98,7 @@ input {
 .table-list {
     border-collapse: collapse;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 .thead-table, th {
@@ -107,9 +107,10 @@ input {
     background-color: #1d1d21;
     color: #fff;
     font-family: "Pompiere", sans-serif;
-    font-size: 27px;
+    font-size: 26px;
     top: 50%;
     left: 50%;
+    
 }
 
 .tbody-table, td, tr{
@@ -118,10 +119,10 @@ input {
     border: 2px, solid black;
     color: black;
     background-color: #fff;
-    font-size: 22px;
-    align-items: center;
+    font-size: 20px;
     top: 50%;
     left: 50%;
+
 }
 
 
@@ -158,4 +159,21 @@ input {
     color: black;
     padding-block: 16px;
 }
+
+
+.form-delete{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    position: absolute;
+    padding: 60px;
+    font-size: 30px;
+}
+
+
+
+
 
