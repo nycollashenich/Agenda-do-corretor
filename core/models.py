@@ -33,6 +33,12 @@ class Imovel(models.Model):
         ('Em reforma', 'Em reforma'),
     ]
 
+    HORARIO_AGENDA_CHOICES = [
+        ('Aguardando cliente', 'aguardando cliente'),
+        ('Agendamento concluído', 'agendamento feito'),
+        ('Agendamento cancelado', 'agendamento cancelado'),
+    ]
+
     tipo = models.CharField('Tipo de Imóvel', max_length=20, choices=TIPO_IMOVEL_CHOICES)
     rua = models.CharField('Rua', max_length=100)
     numero = models.CharField('Número', max_length=10)
@@ -45,10 +51,11 @@ class Imovel(models.Model):
     num_garagem = models.PositiveIntegerField('Número de Vagas na Garagem')
     pets = models.BooleanField('Aceita Pets', default=False)
     condicoes = models.CharField('Condições', max_length=20, choices=CONDICAO_IMOVEL_CHOICES)
+    slug = models.SlugField(max_length=200, unique=True, allow_unicode=True, blank=False)
+    agenda = models.CharField('Agenda', max_length=100, choices=HORARIO_AGENDA_CHOICES)
+    proprietario = models.CharField('Proprietário', max_length=100)
     descricao = models.TextField('Descrição', blank=True)
-    imagem = StdImageField('Imagem', blank=True,upload_to=get_file_path, variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
-    slug = models.SlugField(max_length=200, unique=True, allow_unicode=True, blank=True)
-    agenda = models.CharField('Agenda', max_length=100)
+    imagem = StdImageField('Imagem', upload_to=get_file_path, variations={'thumb':{'width': 480, 'height': 480, 'crop': True}})
 
     # slugy
     def save(self, *args, **kwargs):

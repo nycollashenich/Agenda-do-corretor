@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+{% block content %}
+    <div class="div-imovel">
+        <h1 class="div-h1-imovel">Detalhes do imóvel</h1>
+        <button class="btn btn-danger" style="border-radius:0">
+            <a href="{% url 'list' %}" style="text-decoration: none; color: #fff; padding-block: 310px;">Sair</a>
+        </button>
+        <div class="localizacao">
+            <h1>Localização</h1>
+            <p>Tipo: {{ imoveis.tipo }}</p>
+            <p>Rua: {{ imoveis.rua }}</p>
+            <p>Número: {{ imoveis.numero }}</p>
+            <p>Bairro: {{ imoveis.bairro }}</p>
+            <p>Cidade: {{ imoveis.cidade }}</p>
+            <p>Estado: {{ imoveis.estado }}</p>
+            <p>CEP: {{ imoveis.cep }}</p>
+        </div>
+        <div class="imovel">
+            <h1>Imóvel</h1>
+            <p>Condições do imóvel: {{ imoveis.condicoes }}</p>
+            <p>Número de quarto: {{ imoveis.num_quartos }}</p>
+            <p>Número de banheiro: {{ imoveis.num_banheiros }}</p>
+            <p>Número de garagem: {{ imoveis.num_garagem }}</p>
+            <p>Animais domésticos: {{ imoveis.pets }}</p>
+            <p>Proprietário: {{ imoveis.proprietario }}</p>
+        </div>        
+    </div>
+{% endblock content %}

@@ -17,7 +17,7 @@
                     <th>Rua</th>
                     <th>Estado</th>
                     <th>Cidade</th>
-                    <th>Horário</th>
+                    <th>Agendamento</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -32,6 +32,7 @@
                         <td>
                             <a class="btn btn-warning" href="{% url 'upd_imovel' slug=i.slug %}">Editar</a>
                             <a class="btn btn-danger" href="{% url 'del_imovel' slug=i.slug %}">Deletar</a>
+                            <a class="btn btn-primary" href="{% url 'detalhe_imovel' slug=i.slug %}">Detalhes</a>
                         </td>
                     </tr>
                 {% endfor %}

@@ -173,7 +173,47 @@ input {
     font-size: 30px;
 }
 
+.form-delete p{
+    color: black;
+    margin: auto;
+}
+
+.button-form {
+    padding-inline: 30px;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+}
 
 
+.div-imovel{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+}
+
+.div-h1-imovel {
+    color: black;
+    padding: 20px;
+    margin: auto;
+}
+
+.localizacao {
+    background-color: black;
+    padding: 20px;
+    color: #fff;
+    font-size: 19px;
+}
+
+.imovel{
+    background-color: black;
+    padding: 20px;
+    color: #fff;
+    font-size: 20px;
+}
 
 
