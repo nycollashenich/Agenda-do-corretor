@@ -57,7 +57,6 @@ class Imovel(models.Model):
     descricao = models.TextField('Descrição', blank=True)
     imagem = StdImageField('Imagem', upload_to=get_file_path, variations={'thumb':{'width': 480, 'height': 480, 'crop': True}})
 
-    # slugy
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.rua)

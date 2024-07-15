@@ -1,7 +1,6 @@
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Imovel
-from .forms import ImovelModelForm
 from django.urls import reverse_lazy 
 
 class IndexView(TemplateView):
