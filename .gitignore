@@ -138,3 +138,5 @@ GitHub.sublime-settings
 .history
 
 .template
+.dockerignore
+.fly.toml
