@@ -28,8 +28,6 @@ input {
     border: none;
 }
 
-
-
 #header-index {
     top: 40%;
     position: absolute;
@@ -99,6 +97,7 @@ input {
     border-collapse: collapse;
     margin: auto;
     margin-top: 5%;
+    max-height: 400px;
 }
 
 .thead-table, th {
@@ -110,6 +109,7 @@ input {
     font-size: 26px;
     top: 50%;
     left: 50%;
+    text-align: center;
     
 }
 
@@ -122,6 +122,7 @@ input {
     font-size: 20px;
     top: 50%;
     left: 50%;
+    text-align: center;
 
 }
 
@@ -171,6 +172,7 @@ input {
     position: absolute;
     padding: 60px;
     font-size: 30px;
+    text-align: center;
 }
 
 .form-delete p{
@@ -184,7 +186,6 @@ input {
     background-color: black;
     color: #fff;
 }
-
 
 .div-imovel{
     top: 50%;
@@ -216,4 +217,29 @@ input {
     font-size: 20px;
 }
 
+.div-form {
+    width: 250px;
+    margin: auto; /* Centraliza o formulário horizontalmente */
+    padding: 70px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-inline: 50px;
+}
 
+.btn-form {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.btn-form a{
+    text-decoration: none;
+    color: #f9f9f9;
+    padding: 45px;
+}

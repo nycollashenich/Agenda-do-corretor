@@ -23,7 +23,11 @@
             <p>Número de quarto: {{ imoveis.num_quartos }}</p>
             <p>Número de banheiro: {{ imoveis.num_banheiros }}</p>
             <p>Número de garagem: {{ imoveis.num_garagem }}</p>
-            <p>Animais domésticos: {{ imoveis.pets }}</p>
+            <p>Animais domésticos: {% if imoveis.pets %}
+                Autorizado
+            {% else %}
+                Não autorizado
+            {% endif %}</p>
             <p>Proprietário: {{ imoveis.proprietario }}</p>
         </div>        
     </div>

@@ -1,11 +1,15 @@
+{% extends "base.html" %}
 {% load static %}
+{% load bootstrap4 %}
 {% block content %}
-    <form method="post">
+<div class="div-form">    
+    <form class="form-imovel" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn bnt-primary">Salvar</button>
-        <button type="button" class="btn bnt-warning">
-            <a href="{% url 'list' %}">Cancelar</a>
+        {% bootstrap_form form %}
+        <button type="submit" class="btn-form">Salvar</button>
+           <button type="button" class="btn-form">
+              <a href="{% url 'list' %}">Cancelar</a>
         </button>
     </form>
+</div>
 {% endblock content %}
